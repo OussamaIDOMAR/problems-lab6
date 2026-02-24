@@ -3,31 +3,23 @@ package problem5;
 import java.util.LinkedList;
 
 public class BookStack {
-    private LinkedList<Book> stack;
+    private LinkedList<Book> list = new LinkedList<>();
 
-    public BookStack() {
-
-    }
-
-    public void push(Book book) {
-
+    public void push(Book b) {
+        list.addFirst(b);
     }
 
     public Book pop() {
-        // code here and don't to test if it's empty
+        return list.removeFirst();
     }
 
     public Book peek() {
-        // code here and don't to test if it's empty
+        return list.getFirst();
     }
 
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
-
-    public void display() {
-        System.out.println("Stack contents (top to bottom):");
-
+    public void printStack() {
+        for (Book b : list)
+            System.out.println("- " + b);
     }
 }
 
